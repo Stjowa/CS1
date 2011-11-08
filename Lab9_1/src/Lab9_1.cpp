@@ -30,5 +30,6 @@ int main()
 	}
 	for(int i=0;i<pSize;i++)
 		cout << p[i];
+	delete p;
 	return 0;
 }
