@@ -13,16 +13,14 @@ using namespace std;
 
 int main()
 {
-	//"lab attendance is required."
 	string tempString;
-	int count=0;
 	bool test=true;
 	char array[81] , temp;
 	vector<char> list;
 
 	cout << "Please enter your sentence: ";
 	getline(cin, tempString);
-	while (count < tempString.size())
+	for (int count=0;count < tempString.size();count++)
 	{
 		temp = tempString.at(count);
 		for(int i = 0; i < list.size(); i++)
@@ -31,7 +29,6 @@ int main()
 		if(test)
 			list.push_back(temp);
 		test=true;
-		count++;
 	}
 	for(int i=0;i<list.size();i++)
 		cout << list.at(i);
