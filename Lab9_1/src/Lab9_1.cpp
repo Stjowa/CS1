@@ -8,18 +8,23 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 int main()
 {
+	//"lab attendance is required."
+	string tempString;
 	int count=0;
 	bool test=true;
-	char array[81] = "lab attendance is required.", temp;
+	char array[81] , temp;
 	vector<char> list;
 
-	while (count < 81)
+	cout << "Please enter your sentence: ";
+	getline(cin, tempString);
+	while (count < tempString.size())
 	{
-		temp = array[count];
+		temp = tempString.at(count);
 		for(int i = 0; i < list.size(); i++)
 			if(temp==list.at(i))
 				test = false;
