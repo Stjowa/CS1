@@ -5,23 +5,30 @@ using namespace std;
 
 int main()
 {
+	typedef char* charPtr;
+	charPtr p;
+	p = new char[64];
+	int pSize;
 	string tempString;
 	bool test=true;
-	char array[81] , temp;
-	vector<char> list;
+	char temp;
+
 	cout << "Please enter your sentence: ";
 	getline(cin, tempString);
 	for (int count=0;count < tempString.size();count++)
 	{
 		temp = tempString.at(count);
-		for(int i = 0; i < list.size(); i++)
-			if(temp==list.at(i))
+		for(int i = 0; i < pSize; i++)
+			if(temp==p[i])
 				test = false;
 		if(test)
-			list.push_back(temp);
+		{
+			p[pSize]=temp;
+			pSize++;
+		}
 		test=true;
 	}
-	for(int i=0;i<list.size();i++)
-		cout << list.at(i);
+	for(int i=0;i<pSize;i++)
+		cout << p[i];
 	return 0;
 }
