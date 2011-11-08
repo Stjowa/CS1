@@ -7,7 +7,7 @@ int main()
 {
 	string tempString;
 	bool test=true;
-	char array[81] , temp;
+	char temp;
 	vector<char> list;
 	cout << "Please enter your sentence: ";
 	getline(cin, tempString);
