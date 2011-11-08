@@ -1,11 +1,3 @@
-//============================================================================
-// Name        : Lab9_1.cpp
-// Author      : Stephen Walentik
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
 #include <iostream>
 #include <vector>
 #include <string>
@@ -17,7 +9,6 @@ int main()
 	bool test=true;
 	char array[81] , temp;
 	vector<char> list;
-
 	cout << "Please enter your sentence: ";
 	getline(cin, tempString);
 	for (int count=0;count < tempString.size();count++)
