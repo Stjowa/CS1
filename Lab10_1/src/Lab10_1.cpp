@@ -7,7 +7,6 @@
 //============================================================================
 
 #include <iostream>
-#include <vector>
 using namespace std;
 
 //final - 50%
@@ -70,13 +69,13 @@ int main()
 	average+=grade.quiz2*10*(.25/2.0);
 	average+=grade.midterm*.25;
 	average+=grade.finalExam*.50;
-	if(average>90)
+	if(average>=90)
 		charGrade='A';
-	else if(average>80)
+	else if(average>=80)
 		charGrade='B';
-	else if (average>70)
+	else if (average>=70)
 		charGrade='C';
-	else if (average>60)
+	else if (average>=60)
 		charGrade='D';
 	else
 		charGrade='F';
