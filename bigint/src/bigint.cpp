@@ -11,8 +11,8 @@
 
 int main() {
 	//variables
-	bigint bignum("123434345456");
-	bigint bignum2(12789);
+	bigint bignum("12347755467898765434567898765434567890987658765689097656");
+	bigint bignum2(127893443);
 	bigint bignum4;
 
 	//code tester

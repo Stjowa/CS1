@@ -39,7 +39,7 @@ bigint::bigint(int num){
 	   numList[i]='0';
 	}
 	while(num!=0){
-	   numList[i]=(char)(num%10) + '0';
+	   numList[i]=(num%10) + '0';
 	   num=num/10;
 	   ++i;
 	}
@@ -47,18 +47,25 @@ bigint::bigint(int num){
 	charLength=i-1;
 }
 bigint::bigint(char tempList[]){
-	charLength = strlen(tempList)-1;
 	for(int i=0; i<200; ++i){
 		numList[i]='0';
 	}
-	for(int i=0; i<=charLength; ++i){
+	int i=0;
+	charLength=-1;
+	while(tempList[i]!=0){
+		++charLength;
+		++i;
+	}
+	i=0;
+	while(tempList[i]!=0){
 		numList[charLength-i]=tempList[i];
+		++i;
 	}
 	numList[charLength+1]=0;
 }
 void bigint::print(){
 //charLength
-	for(int i=0; i<=79 && numList[i]!=0; ++i){
+	for(int i=0; i<=79 && numList[i]!=0;++i){
  	   std::cout << numList[charLength-i];
 	}
 	std::cout << std::endl;
