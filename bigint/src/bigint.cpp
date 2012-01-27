@@ -1,26 +1,58 @@
-//============================================================================
-// Name        : bigint.cpp
-// Author      : Stephen Walentik
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
-#include <iostream>
 #include "bigint.h"
+#include <iostream>
 
-int main() {
-	//variables
-	bigint bignum("12347755467898765434567898765434567890987658765689097656");
-	bigint bignum2(127893443);
-	bigint bignum4;
+bigint::bigint(){
+	//maxint = 2147483648
+	for(int i=0; i<200; ++i){
+	   numList[i]='0';
+	}
+	numList[1]=0;
+	charLength=2;
+}
+bigint::bigint(int num){
+	int i=0;
+	for(int i=0; i<200; ++i){
+	   numList[i]='0';
+	}
+	while(num!=0){
+	   numList[i]=(num%10) + '0';
+	   num=num/10;
+	   ++i;
+	}
+	numList[i]=0;
+	charLength=i-1;
+}
+bigint::bigint(char tempList[]){
+	for(int i=0; i<200; ++i){
+		numList[i]='0';
+	}
+	int i=0;
+	charLength=-1;
+	while(tempList[i]!=0){
+		++charLength;
+		++i;
+	}
+	i=0;
+	while(tempList[i]!=0){
+		numList[charLength-i]=tempList[i];
+		++i;
+	}
+	numList[charLength+1]=0;
+}
+void bigint::print(){
+//charLength
+	for(int i=0; i<=79 && numList[i]!=0;++i){
+ 	   std::cout << numList[charLength-i];
+	}
+	std::cout << std::endl;
+}
+bool bigint::operator==(bigint rhs){
+	bool result = true;
+	for(int i=0; i<MAX_SIZE;++i){
+	   //check all the characters in each function
+		if(numList[i]!=rhs.numList[i])
+			result = false;
+	}
 
-	//code tester
-	bignum4.print();
-	bignum.print();
-	bignum2.print();
-	if(bignum==bignum2)
-		std::cout << "Yeah !! ";
-
-	return 0;
+	return result;
 }
