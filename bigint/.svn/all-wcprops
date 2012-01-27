@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/courses/cs33001/svn/!svn/ver/319/swalenti/bigint
+END
+output.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/courses/cs33001/svn/!svn/ver/314/swalenti/bigint/output.cpp
+END
+test_c_str_ctor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/courses/cs33001/svn/!svn/ver/314/swalenti/bigint/test_c_str_ctor.cpp
+END
+test_int_ctor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/courses/cs33001/svn/!svn/ver/314/swalenti/bigint/test_int_ctor.cpp
+END
+bigint.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/courses/cs33001/svn/!svn/ver/319/swalenti/bigint/bigint.h
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/courses/cs33001/svn/!svn/ver/302/swalenti/bigint/.project
+END
+.cproject
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/courses/cs33001/svn/!svn/ver/302/swalenti/bigint/.cproject
+END
+test_default_ctor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/courses/cs33001/svn/!svn/ver/314/swalenti/bigint/test_default_ctor.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/courses/cs33001/svn/!svn/ver/314/swalenti/bigint/Makefile
+END
+bigint.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/courses/cs33001/svn/!svn/ver/302/swalenti/bigint/bigint.cpp
+END

@@ -5,8 +5,6 @@
  *      Author: swalenti
  */
 #include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 #ifndef SW_CS33001_BIGINT_H
 #define SW_CS33001_BIGINT_H
@@ -32,7 +30,9 @@ bigint::bigint(){
 	MAX_SIZE=200;
 }
 bigint::bigint(int x){
-	numList=itoa (x,numList,10);
+	for (int i=1;i<=10 ;++i){
+
+	}
 	MAX_SIZE=200;
 }
 bigint::bigint(char *tempList){
