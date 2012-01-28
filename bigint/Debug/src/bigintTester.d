@@ -1,4 +1,3 @@
-src/bigintTester.d src/bigintTester.o: ../src/bigintTester.cpp \
- ../src/bigint.h
+src/bigintTester.d: ../src/bigintTester.cpp ../src/bigint.h
 
 ../src/bigint.h:

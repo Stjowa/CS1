@@ -19,8 +19,7 @@ int main() {
 	bigint bignum2("12345");
 
 	//code tester
-	bignum.toString();
-	bignum2.toString();
+	bignum + bignum2;
 
 	return 0;
 }

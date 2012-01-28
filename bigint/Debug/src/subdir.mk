@@ -4,12 +4,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/bigint.cpp \
 ../src/bigintTester.cpp 
 
 OBJS += \
+./src/bigint.o \
 ./src/bigintTester.o 
 
 CPP_DEPS += \
+./src/bigint.d \
 ./src/bigintTester.d 
 
 

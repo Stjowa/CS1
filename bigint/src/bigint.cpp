@@ -10,17 +10,23 @@ bigint::bigint(){
 	charLength=2;
 }
 bigint::bigint(int num){
-	int i=0;
+	int i=0,temp=num;
 	for(int i=0; i<200; ++i){
 	   numList[i]='0';
+	}
+	if(num==0){
+	   numList[0]='0';
+	   numList[1]=0;
 	}
 	while(num!=0){
 	   numList[i]=(num%10) + '0';
 	   num=num/10;
 	   ++i;
 	}
-	numList[i]=0;
-	charLength=i-1;
+	if(temp!=0){
+	   numList[i]=0;
+	   charLength=i-1;
+	}
 }
 bigint::bigint(char tempList[]){
 	for(int i=0; i<200; ++i){
@@ -57,17 +63,6 @@ bool bigint::operator==(bigint rhs){
 	return result;
 }
 bool bigint::operator==(int rhsNum){
-	//char rhsNum[200];
-	//for(int i=0;i<200;++i){
-	//   rhsNum[i]='0';
-	//}
-	//if(rhs==0)
-	//   rhsNum[1]=0;
-	//while(rhs!=0){
-        //   numList[i]=(rhs%10) + '0';
-        //   rhs=rhs/10;
-        //   ++i;
-        //}
 	bigint rhs(rhsNum);
 	bool result = true;
 	for (int i=0;i<MAX_SIZE;++i){

@@ -5,56 +5,24 @@
  *      Author: swalenti
  */
 #include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <iostream>
 
 #ifndef SW_CS33001_BIGINT_H
 #define SW_CS33001_BIGINT_H
+
+const int MAX_SIZE = 200;
 
 class bigint {
 public:
 	bigint();
 	bigint(int);
 	bigint(char[]);
-	void setMaxSize(int size);
-	void toString();
+	void output(std::ostream&);
 	bool operator==(bigint);
+	bool operator==(int);
 
 private:
-	int MAX_SIZE;
 	int num, charLength;
-	char *revNumList, *numList;
+	char revNumList[200], numList[200];
 };
-
-bigint::bigint(){
-	//maxint = 2147483648
-	numList[0]=0;
-	MAX_SIZE=200;
-}
-bigint::bigint(int x){
-	numList=itoa (x,numList,10);
-	MAX_SIZE=200;
-}
-bigint::bigint(char *tempList){
-	MAX_SIZE=200;
-	charLength = strlen(tempList)-1;
-	revNumList = new char[MAX_SIZE];
-	numList = new char[MAX_SIZE];
-	numList=tempList;
-	for(int i=0; i<=charLength; ++i){
-		revNumList[charLength-i]=tempList[i];
-	}
-}
-void bigint::toString(){
-	for(int i=0; i<=charLength && i<80; ++i){
-			std::cout << numList[i];
-		}
-}
-void bigint::setMaxSize(int size){
-	MAX_SIZE=size;
-}
-bool bigint::operator==(bigint rhs){
-
-	return false;
-}
 #endif /* SW_CS33001_BIGINT_H */
