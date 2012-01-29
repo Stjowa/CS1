@@ -2,14 +2,14 @@
 #include <iostream>
 
 bigint::bigint(){
-	for(int i=0; i<200; ++i){
+	for(int i=0; i<MAX_SIZE; ++i){
 	   numList[i]='0';
 	}
 	charLength=0;
 }
 bigint::bigint(int num){
 	int i=0,temp=num;
-	for(int i=0; i<200; ++i){
+	for(int i=0; i<MAX_SIZE; ++i){
 	   numList[i]='0';
 	}
 	while(num!=0){
@@ -24,7 +24,7 @@ bigint::bigint(int num){
 	   charLength=0;
 }
 bigint::bigint(char tempList[]){
-	for(int i=0; i<200; ++i){
+	for(int i=0; i<MAX_SIZE; ++i){
 		numList[i]='0';
 	}
 	int i=0;
@@ -64,7 +64,7 @@ bool bigint::operator==(int rhsNum){
 	return result;
 }
 int bigint::operator+(bigint rhs){
-
+	
 }
 int bigint::operator+(int rhsNum){
 	bigint rhs(rhsNum);
