@@ -63,3 +63,9 @@ bool bigint::operator==(int rhsNum){
 	}
 	return result;
 }
+int bigint::operator+(bigint rhs){
+
+}
+int bigint::operator+(int rhsNum){
+	bigint rhs(rhsNum);
+}
