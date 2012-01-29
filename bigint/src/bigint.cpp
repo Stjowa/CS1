@@ -47,7 +47,7 @@ bigint::bigint(char tempList[]){
 }
 void bigint::output(std::ostream& out){
 //charLength
-	for(int i=0; i<=79 && numList[i]!=0;++i){
+	for(int i=0; i<=79 && i<length;++i){
  	   out << numList[charLength-i];
 	}
 	out << std::endl;

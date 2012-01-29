@@ -2,21 +2,15 @@
 #include <iostream>
 
 bigint::bigint(){
-	//maxint = 2147483648
 	for(int i=0; i<200; ++i){
 	   numList[i]='0';
 	}
-	numList[1]=0;
-	charLength=2;
+	charLength=0;
 }
 bigint::bigint(int num){
 	int i=0,temp=num;
 	for(int i=0; i<200; ++i){
 	   numList[i]='0';
-	}
-	if(num==0){
-	   numList[0]='0';
-	   numList[1]=0;
 	}
 	while(num!=0){
 	   numList[i]=(num%10) + '0';
@@ -24,9 +18,10 @@ bigint::bigint(int num){
 	   ++i;
 	}
 	if(temp!=0){
-	   numList[i]=0;
 	   charLength=i-1;
 	}
+	else
+	   charLength=0;
 }
 bigint::bigint(char tempList[]){
 	for(int i=0; i<200; ++i){
@@ -43,11 +38,9 @@ bigint::bigint(char tempList[]){
 		numList[charLength-i]=tempList[i];
 		++i;
 	}
-	numList[charLength+1]=0;
 }
 void bigint::output(std::ostream& out){
-//charLength
-	for(int i=0; i<=79 && numList[i]!=0;++i){
+	for(int i=0; i<=79 && i<charLength+1;++i){
  	   out << numList[charLength-i];
 	}
 	out << std::endl;
@@ -55,7 +48,6 @@ void bigint::output(std::ostream& out){
 bool bigint::operator==(bigint rhs){
 	bool result = true;
 	for(int i=0; i<MAX_SIZE;++i){
-	   //check all the characters in each function
 		if(numList[i]!=rhs.numList[i])
 			result = false;
 	}
