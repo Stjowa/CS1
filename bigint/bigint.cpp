@@ -1,5 +1,4 @@
 #include "bigint.h"
-#include <iostream>
 
 bigint::bigint(){
 	for(int i=0; i<MAX_SIZE; ++i){
@@ -23,7 +22,7 @@ bigint::bigint(int num){
 	else
 	   charLength=0;
 }
-bigint::bigint(char tempList[]){
+bigint::bigint(const char tempList[]){
 	for(int i=0; i<MAX_SIZE; ++i){
 		numList[i]='0';
 	}
@@ -43,9 +42,8 @@ void bigint::output(std::ostream& out){
 	for(int i=0; i<=79 && i<charLength+1;++i){
  	   out << numList[charLength-i];
 	}
-	out << std::endl;
 }
-bool bigint::operator==(bigint rhs){
+bool bigint::operator==(bigint rhs) const{
 	bool result = true;
 	for(int i=0; i<MAX_SIZE;++i){
 		if(numList[i]!=rhs.numList[i])
@@ -54,18 +52,42 @@ bool bigint::operator==(bigint rhs){
 
 	return result;
 }
-bool bigint::operator==(int rhsNum){
-	bigint rhs(rhsNum);
-	bool result = true;
-	for (int i=0;i<MAX_SIZE;++i){
-	   if(numList[i]!=rhs.numList[i])
-		result = false;
+bigint bigint::operator+(bigint rhs) const
+{
+	bigint list;
+	int carry=0;
+	int carryPlace=0;
+	for (int i=0; i<MAX_SIZE; ++i){
+	   if(int(numList[i])+int(rhs.numList[i])+carry>int('9')){
+	      carry=1;
+	      carryPlace=i+1;
+	   }
+	   else carry=0;
+//	   if(carry==1 && i==carryPlace){
+//	      list.numList[i]=int(rhs.numList[i])+int(numList[i])-10;
+// 	   }		
+//	   else{
+	      list.numList[i]=int(rhs.numList[i])+int(numList[i])-int('0');
+//	   }
 	}
-	return result;
+	return list;
 }
-int bigint::operator+(bigint rhs){
-	
+int bigint::operator[](int rhs) const{
+	return int(numList[rhs])-int('0');
 }
-int bigint::operator+(int rhsNum){
-	bigint rhs(rhsNum);
+std::ostream& operator<<(std::ostream& out, bigint rhs){
+	for(int i=0; i<=79 && i<rhs.charLength+1;++i){
+	   out << rhs.numList[rhs.charLength-i];
+	}
+	return out;
+std::istream& operator>>(std::istream& in, bigint& rhs){
+	char ch;
+	in >> ch;
+	int i=0;
+	while (i<MAX_SIZE && ch != ';'){
+	   in >> ch;
+	   rhs.numList[i]=ch;
+	   ++i;
+	}
+	return in;
 }

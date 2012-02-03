@@ -4,7 +4,6 @@
  *  Created on: Jan 23, 2012
  *      Author: swalenti
  */
-#include <string.h>
 #include <iostream>
 
 #ifndef SW_CS33001_BIGINT_H
@@ -18,18 +17,19 @@ public:
 	//Default constructor: Makes bigint equal to 0
 	bigint(int);
 	//Int constructor: Takes in an int and assigns it to bigint
-	bigint(char[]);
+	bigint(const char[]);
 	//String, or char array constructor: Takes in a char or string and makes it a bigint
 	void output(std::ostream&);
 	//This outputs the bigint, but only up to 80 digits of it
-	bool operator==(bigint);
+	bool operator==(bigint) const;
 	//Overloaded to deal with a bigint to bigint compare
-	bool operator==(int);
-	//Overloaded to deal with a bigint to int comare
-	int operator+(bigint);
+	bigint operator+(bigint) const;
 	//Overloaded to add a bigint and bigint together
-	int operator+(int);
-	//Overleaded to add a bigint to a int together
+	int operator[](int) const;
+
+//friends
+	friend std::ostream& operator<<(std::ostream&, bigint);
+	friend std::istream& operator>>(std::istream&, bigint&);
 
 private:
 	int num, charLength;
