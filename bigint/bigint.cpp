@@ -49,28 +49,35 @@ bool bigint::operator==(bigint rhs) const{
 		if(numList[i]!=rhs.numList[i])
 			result = false;
 	}
-
 	return result;
 }
 bigint bigint::operator+(bigint rhs) const
 {
-	bigint list;
+	bigint sum;
 	int carry=0;
-	int carryPlace=0;
-	for (int i=0; i<MAX_SIZE; ++i){
-		if(int(numList[i])+int(rhs.numList[i])+carry>int('9')){
-			list.numList[i]=int(numList[i])+int(rhs.numList[i])+carry-10;
+	for(int i=0; i<MAX_SIZE; ++i){
+		if(int(numList[i]) + int(rhs.numList[i]) - int('0') + carry > int('9')){
+			sum.numList[i]=(int(numList[i]) + int(rhs.numList[i]) - int('0') + carry -10);
 			carry=1;
-			carryPlace=i+1;
 		}
-//		if(carry==1 && i==carryPlace){
-//			list.numList[i]=int(rhs.numList[i])+int(numList[i])-10;
-//		}		
-		list.numList[i]=int(rhs.numList[i])+int(numList[i])-int('0');
-		carry=0;
-	   
+		else{
+			sum.numList[i] = int(numList[i]) + int(rhs.numList[i]) - int('0') + carry;
+			carry=0;
+		}
 	}
-	return list;
+	if(charLength > rhs.charLength){
+		sum.charLength = charLength;
+		if(sum.numList[charLength+1] != '0'){
+			++sum.charLength;
+		}
+	}
+	else{
+		sum.charLength = rhs.charLength;
+		if(sum.numList[rhs.charLength+1] != '0'){
+			++sum.charLength;
+		}
+	}
+return sum;
 }
 int bigint::operator[](int rhs) const{
 	return int(numList[rhs])-int('0');
@@ -92,7 +99,6 @@ std::istream& operator>>(std::istream& in, bigint& rhs){
 		++i;
 		++rhs.charLength;
 	}
-	//--rhs.charLength;
 	for(int i=0; i<rhs.charLength;++i){
 		rhs.numList[rhs.charLength-i-1]=tempList[i];
 	}
