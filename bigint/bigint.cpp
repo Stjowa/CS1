@@ -48,7 +48,7 @@ bool bigint::operator==(bigint rhs) const{
 	for(int i=0; i<MAX_SIZE;++i){
 		if(numList[i]!=rhs.numList[i])
 			result = false;
-	}
+	}	
 	return result;
 }
 bigint bigint::operator+(bigint rhs) const
@@ -77,7 +77,7 @@ bigint bigint::operator+(bigint rhs) const
 			++sum.charLength;
 		}
 	}
-return sum;
+	return sum;
 }
 int bigint::operator[](int rhs) const{
 	return int(numList[rhs])-int('0');
