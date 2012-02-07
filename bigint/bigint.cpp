@@ -105,3 +105,20 @@ std::istream& operator>>(std::istream& in, bigint& rhs){
 	--rhs.charLength;
 	return in;
 }
+void bigint::times_10(int num){
+	int i=0;
+	while(i<num){
+		for(int j=MAX_SIZE-1; j>0; --j){
+			numList[j]=numList[j-1];
+		}
+		numList[0]='0';
+		++i;
+	}
+}
+void bigint::times_single_digit(int num){
+
+}
+bigint bigint::operator*(bigint rhs) const{
+	bigint g;
+	return g;
+}

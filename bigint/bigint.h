@@ -26,6 +26,10 @@ public:
 	bigint operator+(bigint) const;
 	//Overloaded to add a bigint and bigint together
 	int operator[](int) const;
+	void times_10(int);
+	void times_single_digit(int);
+	bigint operator*(bigint) const;
+
 
 //friends
 	friend std::ostream& operator<<(std::ostream&, bigint);
