@@ -20,6 +20,8 @@ int main ()
 
         // Verify
         assert(bi == 3);
+
+		//passed
     }
 
     {
@@ -32,6 +34,9 @@ int main ()
 
         // Verify
         assert(bi == 15);
+
+
+		//passed
     }
 
     {

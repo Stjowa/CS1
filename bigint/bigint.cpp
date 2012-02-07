@@ -116,7 +116,20 @@ void bigint::times_10(int num){
 	}
 }
 void bigint::times_single_digit(int num){
-
+	bigint temp, tempAdd;
+	int lhsTemp=0, carry=0;
+	for(int i=MAX_SIZE; i>=0; --i){
+		//gives lhsTemp the int value of the numList char
+		lhsTemp = numList[i] - int('0');
+		lhsTemp*=num;
+		temp = bigint(lhsTemp * num);
+		temp.times_10(i);
+		tempAdd = tempAdd + temp;
+		numList[i]=(lhsTemp%10) + int('0');
+		carry=lhsTemp/10;
+		//adds the carry to the number before
+		numList[i+1]= carry + int('0');
+	}
 }
 bigint bigint::operator*(bigint rhs) const{
 	bigint g;
