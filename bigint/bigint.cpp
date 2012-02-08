@@ -122,9 +122,6 @@ void bigint::times_single_digit(int num){
 		//gives lhsTemp the int value of the numList char
 		lhsTemp = numList[i] - int('0');
 		lhsTemp*=num;
-		//temp = bigint(lhsTemp * num);
-		//temp.times_10(i);
-		//tempAdd = tempAdd + temp;
 		numList[i]=(lhsTemp%10) + int('0');
 		carry=lhsTemp/10;
 		//adds the carry to the number before
