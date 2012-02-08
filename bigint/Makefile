@@ -77,7 +77,7 @@ test_subscript.o: bigint.h test_subscript.cpp
 
 #==============================================================
 # Test C-string ctor
-test_times_10: test_times_10.o  bigint.o
+test_times_10: test_times_10.o bigint.o
 	$(GCC) $(OPTS) -o test_times_10 test_times_10.o bigint.o
 
 test_times_10.o: bigint.h  test_times_10.cpp
