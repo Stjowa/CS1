@@ -1,4 +1,5 @@
 #include "bigint.h"
+#include "cassert"
 
 bigint::bigint(){
 	for(int i=0; i<MAX_SIZE; ++i){
@@ -39,7 +40,9 @@ bigint::bigint(const char tempList[]){
 	}
 }
 void bigint::output(std::ostream& out){
-	for(int i=0; i<=79 && i<charLength+1;++i){
+	for(int i=0; i<=MAX_SIZE && i<charLength+1;++i){
+		if(i % 80 == 0 && i != 0)
+			out << std::endl;
  		out << numList[charLength-i];
 	}
 }
@@ -65,6 +68,7 @@ bigint bigint::operator+(bigint rhs) const
 			carry=0;
 		}
 	}
+	//This gives the charLength a value to allow output to work
 	if(charLength > rhs.charLength){
 		sum.charLength = charLength;
 		if(sum.numList[charLength+1] != '0'){
@@ -83,7 +87,9 @@ int bigint::operator[](int rhs) const{
 	return int(numList[rhs])-int('0');
 }
 std::ostream& operator<<(std::ostream& out, bigint rhs){
-	for(int i=0; i<=79 && i<rhs.charLength+1;++i){
+	for(int i=0; i<MAX_SIZE && i<rhs.charLength+1;++i){
+		if( i % 80 == 0 && i!=0)
+			out << std::endl;
 		out << rhs.numList[rhs.charLength-i];
 	}
 	return out;
@@ -107,6 +113,9 @@ std::istream& operator>>(std::istream& in, bigint& rhs){
 }
 void bigint::times_10(int num){
 	int i=0;
+	//Shifts everything in the array over to the right and adding a zero to the end.
+	//The inside for loop shifts over once and then the while loop will have the
+	//for loop shift over for the power of ten that is put in
 	while(i<num){
 		for(int j=MAX_SIZE-1; j>0; --j){
 			numList[j]=numList[j-1];
@@ -116,8 +125,13 @@ void bigint::times_10(int num){
 	}
 }
 void bigint::times_single_digit(int num){
+	//Checks to make sure 0<=num<10
+	assert(num < 10 && num >= 0);
 	bigint temp, tempAdd;
 	int lhsTemp=0, carry=0;
+	//lhsTemp is the int of numList at that index
+	//then lhsTemp is multiplied by num and stored back into numList
+	//if there is a carry then it is dealt with through carry
 	for(int i=MAX_SIZE; i>=0; --i){
 		//gives lhsTemp the int value of the numList char
 		lhsTemp = numList[i] - int('0');
@@ -129,6 +143,23 @@ void bigint::times_single_digit(int num){
 	}
 }
 bigint bigint::operator*(bigint rhs) const{
-	bigint g;
-	return g;
+	//this.times_single_digit() pass in rhs.numList[i] as an int
+	//that will give you the multiplication of the whole bigint 
+	//at that rhs index and then add it to each of the indexes
+	//as the program continues, this should be able to give you
+	//the entire multiplication but make sure to keep track of the
+	//charLength because that is what allows the bigint to output
+	//correctly without having to output extra '0' using times_10
+	//to add the amount of zeros between the index.
+	bigint result, temp=*this;
+	int lhstemp=0,rhstemp=0;
+	
+	for(int i=0; i<MAX_SIZE; i++){
+		temp=*this;
+		rhstemp = rhs.numList[i] - int('0');
+		temp.times_single_digit(rhstemp);
+		temp.times_10(i);
+		result = result + temp;
+	}
+	return result;
 }
