@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/courses/cs33001/svn/!svn/ver/1574/swalenti/string
+END
+test_c_str_ctor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/courses/cs33001/svn/!svn/ver/2512/swalenti/string/test_c_str_ctor.cpp
+END
+test_generic_ctor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/courses/cs33001/svn/!svn/ver/1535/swalenti/string/test_generic_ctor.cpp
+END
+test_IO.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/courses/cs33001/svn/!svn/ver/2513/swalenti/string/test_IO.cpp
+END
+test_generic_member_function_return.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/courses/cs33001/svn/!svn/ver/1535/swalenti/string/test_generic_member_function_return.cpp
+END
+string.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/courses/cs33001/svn/!svn/ver/2512/swalenti/string/string.cpp
+END
+test_findstring.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/courses/cs33001/svn/!svn/ver/2513/swalenti/string/test_findstring.cpp
+END
+test_default_ctor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/courses/cs33001/svn/!svn/ver/2512/swalenti/string/test_default_ctor.cpp
+END
+string.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/courses/cs33001/svn/!svn/ver/2512/swalenti/string/string.h
+END
+test_findchar.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/courses/cs33001/svn/!svn/ver/2513/swalenti/string/test_findchar.cpp
+END
+test_subscript.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/courses/cs33001/svn/!svn/ver/2512/swalenti/string/test_subscript.cpp
+END
+test_generic_binary_op.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/courses/cs33001/svn/!svn/ver/1535/swalenti/string/test_generic_binary_op.cpp
+END
+test_length.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/courses/cs33001/svn/!svn/ver/1574/swalenti/string/test_length.cpp
+END
+test_substr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/courses/cs33001/svn/!svn/ver/2513/swalenti/string/test_substr.cpp
+END
+test_compare.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/courses/cs33001/svn/!svn/ver/2513/swalenti/string/test_compare.cpp
+END
+test_generic_member_function_void.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/courses/cs33001/svn/!svn/ver/1535/swalenti/string/test_generic_member_function_void.cpp
+END
+test_addition.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/courses/cs33001/svn/!svn/ver/2513/swalenti/string/test_addition.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/courses/cs33001/svn/!svn/ver/2512/swalenti/string/Makefile
+END

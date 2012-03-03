@@ -1,0 +1,77 @@
+//  String class test program
+//
+//  Tests: XXX
+//
+
+#include "string.h"
+#include <cassert>
+
+//===========================================================================
+int main ()
+{
+    {
+        //------------------------------------------------------
+        // SETUP FIXTURE
+        string  str("");
+
+        // VERIFY
+        assert(str    == "");
+        assert(str.length() == 0);
+    }
+
+    {
+        //------------------------------------------------------
+        // SETUP FIXTURE
+        string  str("hello");
+
+        // VERIFY
+        assert(str    == "hello");
+        assert(str.length() == 5);
+    }
+
+    {
+        //------------------------------------------------------
+        // SETUP FIXTURE
+        string  str("hello world");
+
+        // VERIFY
+        assert(str    == "hello world");
+        assert(str.length() == 11);
+    }
+
+    {
+        //------------------------------------------------------
+        // SETUP FIXTURE
+        string  str("HELLO WORLD");
+
+        assert(str    == "HELLO WORLD");
+        assert(str.length() == 11);
+    }
+
+    {
+        //------------------------------------------------------
+        // SETUP FIXTURE
+        string  str("Hello World");
+
+        // VERIFY
+        assert(str    == "Hello World");
+        assert(str.length() == 11);
+    }
+/*
+    {
+        //------------------------------------------------------
+        // SETUP FIXTURE
+        string  str("Hello World!, Hello World!, Hello World!, Hello World!, Hello World!, Hello World!, Hello World!, Hello World!, Hello World!");
+
+        // TEST
+        string result = str();
+
+        // VERIFY
+        assert(str    == "Hello World!, Hello World!, Hello World!, Hello World!, Hello World!, Hello World!, Hello World!, Hello World!, Hello World!");
+        assert(result == 124);
+    }
+
+    // ADD ADDITIONAL TESTS AS NECESSARY
+*/
+}
+
